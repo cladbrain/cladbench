@@ -1,0 +1,204 @@
+{
+  "purpose": "Primary sources the CladBench holdout questions are written from and verified against. Files are not committed (46 MB, Crown copyright and BRE material); this manifest makes them reproducible. Re-download each file and check its SHA-256 against the value here to confirm you hold the same document the questions were built against.",
+  "generated": "2026-08-14",
+  "document_count": 20,
+  "documents": {
+    "ADB1.pdf": {
+      "title": "Approved Document B: Fire safety, Volume 1 \u2014 Dwellings (2019 edition, incorporating 2020/2022/2025 amendments, collated with 2026 and 2029 amendments)",
+      "sha256": "5ec1573c91ee9bfe1cac5a41a5ad58f05f72dd90fbd04dcd445e66888c0ea717",
+      "bytes": 6317652,
+      "retrieved": "2026-08-13",
+      "url_publication": "https://www.gov.uk/government/publications/fire-safety-approved-document-b",
+      "exact_url_captured": true,
+      "url_exact": "https://assets.publishing.service.gov.uk/media/67d2bb074702aacd2251cb94/Approved_Document_B_volume_1_Dwellings_2019_edition_incorporating_2020_2022_and_2025_amendments_collated_with_2026_and_2029_amendments.pdf",
+      "pages": 180
+    },
+    "ADB2.pdf": {
+      "title": "Approved Document B: Fire safety, Volume 2 \u2014 Buildings other than dwellings (2019 edition, as above)",
+      "sha256": "2e044e6a7b49de169ecf297f6512c5b5d934fe5c57930316d0c23c7e8430c79a",
+      "bytes": 3521754,
+      "retrieved": "2026-08-13",
+      "url_publication": "https://www.gov.uk/government/publications/fire-safety-approved-document-b",
+      "exact_url_captured": true,
+      "url_exact": "https://assets.publishing.service.gov.uk/media/67d17064a005e6f9841a1d50/Approved_Document_B_volume_2_Buildings_other_than_Dwellings_2019_edition_incorporating_2020_2022_and_2025_amendments_collated_with_2026_and_2029_amendments.pdf",
+      "pages": 226
+    },
+    "ADC.pdf": {
+      "title": "Approved Document C: Site preparation and resistance to contaminants and moisture (2004 edition, incorporating 2010 and 2013 amendments)",
+      "sha256": "70e17ada2c78c14db814886572702a39ba037c3f40b80def5bf16d85bf1e3ac0",
+      "bytes": 4518481,
+      "retrieved": "2026-08-13",
+      "url_publication": "https://www.gov.uk/government/publications/site-preparation-and-resistance-to-contaminates-and-moisture-approved-document-c",
+      "exact_url_captured": true,
+      "url_exact": "https://assets.publishing.service.gov.uk/media/5a8192a0e5274a2e8ab54b5f/BR_PDF_AD_C_2013.pdf",
+      "pages": 52
+    },
+    "ADE.pdf": {
+      "title": "Approved Document E: Resistance to the passage of sound (2003 edition, as amended)",
+      "sha256": "e6a8feb6d62ee922f4fcd014577b8df71b0485aa5c5f90b2c5c8a847134d7bfe",
+      "bytes": 3924222,
+      "retrieved": "2026-08-13",
+      "url_publication": "https://www.gov.uk/government/publications/resistance-to-sound-approved-document-e",
+      "exact_url_captured": true,
+      "url_exact": "https://assets.publishing.service.gov.uk/media/5a809c4fe5274a2e87dbacb9/ADE_LOCKED.pdf",
+      "pages": 86
+    },
+    "ADF1.pdf": {
+      "title": "Approved Document F: Ventilation, Volume 1 \u2014 Dwellings (2021 edition)",
+      "sha256": "5d3ebc08f54eab7537076dcce179a298dc6c4cd13c2eee78ca4ca388b9678605",
+      "bytes": 879866,
+      "retrieved": "2026-08-13",
+      "url_publication": "https://www.gov.uk/government/publications/ventilation-approved-document-f",
+      "exact_url_captured": true,
+      "url_exact": "https://assets.publishing.service.gov.uk/media/61deba42d3bf7f054fcc243d/ADF1.pdf",
+      "pages": 62
+    },
+    "ADF2.pdf": {
+      "title": "Approved Document F: Ventilation, Volume 2 \u2014 Buildings other than dwellings (2021 edition, revised)",
+      "sha256": "e039b3b06d0123e671dc439a9ce9358412c95316cf8c41e5a5c10cac4dd3982a",
+      "bytes": 677948,
+      "retrieved": "2026-08-13",
+      "url_publication": "https://www.gov.uk/government/publications/ventilation-approved-document-f",
+      "exact_url_captured": true,
+      "url_exact": "https://assets.publishing.service.gov.uk/media/62a761edd3bf7f03667c667e/ADF2_revised.pdf",
+      "pages": 48
+    },
+    "ADG.pdf": {
+      "title": "Approved Document G: Sanitation, hot water safety and water efficiency (2015 edition, as amended)",
+      "sha256": "cc02cbfc66cc610098c3c878d23ecfe1b13d63a33303d1bde85a39abdba322fa",
+      "bytes": 692756,
+      "retrieved": "2026-08-13",
+      "url_publication": "https://www.gov.uk/government/publications/sanitation-hot-water-safety-and-water-efficiency-approved-document-g",
+      "exact_url_captured": false,
+      "pages": 56
+    },
+    "ADH.pdf": {
+      "title": "Approved Document H: Drainage and waste disposal (2002 edition, incorporating 2010 and 2015 amendments)",
+      "sha256": "46d6a268d746983a208b2dc6ea44f8141b2fd6b77af339029844583bf96a8824",
+      "bytes": 1284887,
+      "retrieved": "2026-08-13",
+      "url_publication": "https://www.gov.uk/government/publications/drainage-and-waste-disposal-approved-document-h",
+      "exact_url_captured": true,
+      "url_exact": "https://assets.publishing.service.gov.uk/media/5a80cf9ded915d74e33fc8ae/BR_PDF_AD_H_2015.pdf",
+      "pages": 64
+    },
+    "ADK.pdf": {
+      "title": "Approved Document K: Protection from falling, collision and impact (2013 edition)",
+      "sha256": "134e7b07b0730474efd6b5b65ce0bc7a9cf5db05bfa8491588b7884d42c10e51",
+      "bytes": 2112810,
+      "retrieved": "2026-08-13",
+      "url_publication": "https://www.gov.uk/government/publications/protection-from-falling-collision-and-impact-approved-document-k",
+      "exact_url_captured": true,
+      "url_exact": "https://assets.publishing.service.gov.uk/media/60d5bdcde90e07716f516cfd/Approved_Document_K.pdf",
+      "pages": 68
+    },
+    "ADL1.pdf": {
+      "title": "Approved Document L: Conservation of fuel and power, Volume 1 \u2014 Dwellings (2021 edition, incorporating 2023 amendments)",
+      "sha256": "1ab93e597d9ba43531f26b3a94323383f011548ac536d6a036e20d107ecceaa3",
+      "bytes": 1505096,
+      "retrieved": "2026-08-13",
+      "url_publication": "https://www.gov.uk/government/publications/conservation-of-fuel-and-power-approved-document-l",
+      "exact_url_captured": true,
+      "url_exact": "https://assets.publishing.service.gov.uk/media/662a2e3e55e1582b6ca7e592/Approved_Document_L__Conservation_of_fuel_and_power__Volume_1_Dwellings__2021_edition_incorporating_2023_amendments.pdf",
+      "pages": 104
+    },
+    "ADL2.pdf": {
+      "title": "Approved Document L: Conservation of fuel and power, Volume 2 \u2014 Buildings other than dwellings (2021 edition, incorporating 2023 amendments)",
+      "sha256": "951ba0b9874c74c8d6e27c1f78cb80d4c60c78fdc95a09a81286f743ea86227e",
+      "bytes": 1414953,
+      "retrieved": "2026-08-13",
+      "url_publication": "https://www.gov.uk/government/publications/conservation-of-fuel-and-power-approved-document-l",
+      "exact_url_captured": false,
+      "pages": 116
+    },
+    "ADM1.pdf": {
+      "title": "Approved Document M: Access to and use of buildings, Volume 1 \u2014 Dwellings (2015 edition, incorporating 2016 amendments)",
+      "sha256": "fb66dd25e48500ad86e0ab034c94a5a1efdb2219c9eab98d9d4468a931133fd2",
+      "bytes": 1745146,
+      "retrieved": "2026-08-13",
+      "url_publication": "https://www.gov.uk/government/publications/access-to-and-use-of-buildings-approved-document-m",
+      "exact_url_captured": true,
+      "url_exact": "https://assets.publishing.service.gov.uk/media/5a7f8a82ed915d74e622b17b/BR_PDF_AD_M1_2015_with_2016_amendments_V3.pdf",
+      "pages": 69
+    },
+    "ADM2.pdf": {
+      "title": "Approved Document M: Access to and use of buildings, Volume 2 \u2014 Buildings other than dwellings (2015 edition, with 2024 amendments)",
+      "sha256": "0e5d4dee25b341f4e80a99a40a6b36bb1a0251926867aa17e9f71e5b12a1046c",
+      "bytes": 1471989,
+      "retrieved": "2026-08-13",
+      "url_publication": "https://www.gov.uk/government/publications/access-to-and-use-of-buildings-approved-document-m",
+      "exact_url_captured": true,
+      "url_exact": "https://assets.publishing.service.gov.uk/media/66f6c5eec71e42688b65ee11/ADM__V2_with_2024_amendments.pdf",
+      "pages": 74
+    },
+    "ADO.pdf": {
+      "title": "Approved Document O: Overheating (2021 edition)",
+      "sha256": "36abadd39347d5d8a1c5fe0c021758efd8ecc09dc8f129393e47bcfa5edefab6",
+      "bytes": 3553342,
+      "retrieved": "2026-08-13",
+      "url_publication": "https://www.gov.uk/government/publications/overheating-approved-document-o",
+      "exact_url_captured": true,
+      "url_exact": "https://assets.publishing.service.gov.uk/media/6218c5aad3bf7f4f0b29b624/ADO.pdf",
+      "pages": 44
+    },
+    "ADP.pdf": {
+      "title": "Approved Document P: Electrical safety \u2014 Dwellings (2013 edition, incorporating 2013 amendments)",
+      "sha256": "c7128889ff469b0cdaa746988b96033ab5757bc624f1d3774b826dffb355c6de",
+      "bytes": 2450948,
+      "retrieved": "2026-08-13",
+      "url_publication": "https://www.gov.uk/government/publications/electrical-safety-approved-document-p",
+      "exact_url_captured": false,
+      "pages": 22
+    },
+    "ADQ.pdf": {
+      "title": "Approved Document Q: Security in dwellings (2015 edition)",
+      "sha256": "481635d8004b08191390cc3b7c70168c614fa298de73624f6ad82f1d6d13baf5",
+      "bytes": 296148,
+      "retrieved": "2026-08-13",
+      "url_publication": "https://www.gov.uk/government/publications/security-in-dwellings-approved-document-q",
+      "exact_url_captured": true,
+      "url_exact": "https://assets.publishing.service.gov.uk/media/5a8016a8ed915d74e622c659/BR_PDF_AD_Q_2015.pdf",
+      "pages": 20
+    },
+    "ADS.pdf": {
+      "title": "Approved Document S: Infrastructure for charging electric vehicles (2021 edition)",
+      "sha256": "71f7892684c1bb1ec30aea4d5c546afc85f0e3783c4a2cb940303feb2a2eb0b5",
+      "bytes": 878711,
+      "retrieved": "2026-08-13",
+      "url_publication": "https://www.gov.uk/government/publications/infrastructure-for-charging-electric-vehicles-approved-document-s",
+      "exact_url_captured": true,
+      "url_exact": "https://assets.publishing.service.gov.uk/media/6218c5d38fa8f54911e22263/AD_S.pdf",
+      "pages": 47
+    },
+    "ADT.pdf": {
+      "title": "Approved Document T: Toilet accommodation (2024 edition)",
+      "sha256": "c8303bc7441dbbee1800077890cd28b6911395d6b2dbd8877036e069bf3de168",
+      "bytes": 856346,
+      "retrieved": "2026-08-13",
+      "url_publication": "https://www.gov.uk/government/publications/toilet-accommodation-approved-document-t",
+      "exact_url_captured": false,
+      "pages": 36
+    },
+    "BREEAM_NC2018.pdf": {
+      "title": "BREEAM UK New Construction 2018 \u2014 Non-domestic buildings. Technical Manual SD5078, Issue 3.0, 31/07/2019",
+      "sha256": "c6536dd1ecc4e12fe47e44d78cf84c02b8056902bf6eee83f3c5eaf57673a1b0",
+      "bytes": 9788995,
+      "retrieved": "2026-08-13",
+      "url_publication": "https://bregroup.com/products/breeam/",
+      "exact_url_captured": true,
+      "url_exact": "https://www.babergh.gov.uk/documents/d/babergh/c20-breeam-non-domestic-buildings-technical-manual-july-2019",
+      "pages": 402,
+      "note": "BRE state in the document's own front matter that the Scheme Document 'is made publicly available, and free of charge, for information purposes only'. The BREEAM-branded URLs return 404; this copy is published by Babergh District Council as planning evidence and is the same document."
+    },
+    "IFC4.exp": {
+      "title": "IFC4 EXPRESS schema (buildingSMART International, copyright 1996-2013)",
+      "sha256": "7d9fb70bbbaa2d04f3405704cab293698d993374f9972e643a94079a9a13459e",
+      "bytes": 375252,
+      "retrieved": "2026-08-13",
+      "url_publication": "https://standards.buildingsmart.org/IFC/RELEASE/IFC4/",
+      "exact_url_captured": true,
+      "url_exact": "https://raw.githubusercontent.com/stepcode/stepcode/develop/data/ifc4/IFC4.exp",
+      "note": "buildingSMART's own host returns 403 to automated fetches, so this is a third-party mirror (the STEPcode project). Integrity was checked structurally rather than taken on trust: SCHEMA name IFC4, 766 ENTITY and 391 TYPE definitions, and it independently reproduces two findings from the public-set verification - IfcAlignment and IfcWindowTypeOperationEnum are both absent from IFC4, which is exactly why those two Category 3 questions were corrected. This is base IFC4 (2013), NOT IFC4 ADD2 TC1; holdout questions must cite it as such."
+    }
+  }
+}

@@ -1,0 +1,195 @@
+{
+  "harness_version": "2.0.0",
+  "dataset_hash": "e4695eb32bcbab136af857c57e66bcf67945bf3b7653a675acea2425ebff580b",
+  "dataset_split": "public",
+  "categories": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "model": "anthropic:claude-opus-4-7",
+  "judge_model": "claude-opus-4-7",
+  "token_budgets": {
+    "mcq": 512,
+    "mcq_with_rationale": 32768,
+    "short_answer": 32768,
+    "ranking": 4096,
+    "open_answer": 8192
+  },
+  "generated_at": "2026-08-13T13:19:57+00:00",
+  "python": "3.11.9",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "usage": {
+    "prompt_tokens": 118150,
+    "completion_tokens": 321666,
+    "judge_calls": 17,
+    "wall_clock_min": 2.1999999999999997
+  },
+  "dataset_hash_at_run_time": "3e1e0380dd7203a59652ad6e15c8d5edc246b748b490d8bd6ff95ea1b1de04d3",
+  "corrections_applied_after_run": {
+    "question_or_option_text_changed_models_rerun": [
+      "cb1-03-public-0010",
+      "cb1-03-public-0033",
+      "cb1-03-public-0039",
+      "cb1-09-public-0033",
+      "all 297 MCQ (option order rebalanced to even the answer-letter distribution)",
+      "cb1-01-public-0001",
+      "cb1-01-public-0003",
+      "cb1-01-public-0004",
+      "cb1-01-public-0005",
+      "cb1-01-public-0006",
+      "cb1-01-public-0009",
+      "cb1-01-public-0023",
+      "cb1-01-public-0024",
+      "cb1-01-public-0025",
+      "cb1-01-public-0031",
+      "cb1-01-public-0039",
+      "cb1-01-public-0042",
+      "cb1-01-public-0045",
+      "cb1-01-public-0053"
+    ],
+    "reference_answer_changed_judges_remarked": [
+      "cb1-12-public-0003",
+      "cb1-12-public-0012",
+      "cb1-12-public-0016",
+      "cb1-12-public-0021",
+      "cb1-12-public-0030",
+      "cb1-12-public-0032",
+      "all 30 Cat 5 rankings (recomputed from the arithmetic in each question)"
+    ],
+    "reference_answer_changed_responses_rescored_not_rerun": [
+      "cb1-01-public-0034 (Grade D1 -> D2, AD B Vol 1 para 1.1)",
+      "cb1-01-public-0043 (43 C -> 48 C, AD G3 para 3.65 and requirement G3(4))"
+    ],
+    "rationale_or_citation_only_no_rerun_needed": [
+      "cb1-09-public-0005",
+      "cb1-09-public-0012",
+      "cb1-09-public-0039",
+      "cb1-09-public-0041",
+      "26 Cat 1 citations corrected to the right table or paragraph (0010, 0011, 0013, 0015, 0017, 0018, 0020, 0022, 0026, 0028, 0029, 0030, 0033, 0035, 0037, 0038, 0040, 0041, 0044, 0046, 0047, 0048, 0049, 0050, 0051, 0054)"
+    ]
+  },
+  "restamp_note": "Reference answers, rationales and citations were corrected after this run by primary-source verification. Question text seen by models is unchanged, or was re-run where it changed; judges were re-marked where the reference changed. See docs/cladbench_review/primary_source_verification/verdicts.csv.",
+  "manifest_rebuilt_from_rows": {
+    "rebuilt_at": "2026-08-13",
+    "clobbered_manifest_generated_at": "2026-08-13T12:01:45+00:00",
+    "clobbered_manifest_categories": [
+      3
+    ],
+    "note": "The full-run manifest for this file was overwritten on 2026-08-13T12:01Z by a partial re-run invoked as `run_baseline.py --categories 3`, which at the time wrote its manifest over the existing one. Scope and usage here are recomputed from the rows of the JSONL itself: `categories` lists the categories actually present, and `usage` sums the per-row usage each answer records. The original full-run wall-clock and generated_at are not recoverable and are not guessed. write_manifest now merges manifests rather than replacing them."
+  },
+  "rows": 536,
+  "runs": [
+    {
+      "generated_at": null,
+      "categories": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "usage": {
+        "prompt_tokens": 110917,
+        "completion_tokens": 319474,
+        "source": "summed from per-row usage in the JSONL"
+      },
+      "harness_version": "2.0.0"
+    },
+    {
+      "generated_at": "2026-08-13T13:19:57+00:00",
+      "categories": [
+        1
+      ],
+      "usage": {
+        "prompt_tokens": 1985,
+        "completion_tokens": 70,
+        "judge_calls": 0,
+        "wall_clock_min": 0.5
+      },
+      "harness_version": "2.0.0"
+    },
+    {
+      "generated_at": "2026-08-13T15:07:23+00:00",
+      "categories": [
+        2
+      ],
+      "usage": {
+        "prompt_tokens": 257,
+        "completion_tokens": 151,
+        "judge_calls": 2,
+        "wall_clock_min": 0.1
+      },
+      "harness_version": "2.0.0"
+    },
+    {
+      "generated_at": "2026-08-13T15:40:48+00:00",
+      "categories": [
+        6
+      ],
+      "usage": {
+        "prompt_tokens": 3227,
+        "completion_tokens": 1281,
+        "judge_calls": 11,
+        "wall_clock_min": 0.9
+      },
+      "harness_version": "2.0.0"
+    },
+    {
+      "generated_at": "2026-08-13T15:56:04+00:00",
+      "categories": [
+        6
+      ],
+      "usage": {
+        "prompt_tokens": 1482,
+        "completion_tokens": 680,
+        "judge_calls": 4,
+        "wall_clock_min": 0.4
+      },
+      "harness_version": "2.0.0"
+    },
+    {
+      "generated_at": "2026-08-13T16:58:08+00:00",
+      "categories": [
+        8
+      ],
+      "usage": {
+        "prompt_tokens": 175,
+        "completion_tokens": 5,
+        "judge_calls": 0,
+        "wall_clock_min": 0.0
+      },
+      "harness_version": "2.0.0"
+    },
+    {
+      "generated_at": "2026-08-14T08:45:59+00:00",
+      "categories": [
+        8
+      ],
+      "usage": {
+        "prompt_tokens": 107,
+        "completion_tokens": 5,
+        "judge_calls": 0,
+        "wall_clock_min": 0.3
+      },
+      "harness_version": "2.0.0"
+    }
+  ],
+  "last_run_at": "2026-08-14T08:45:59+00:00"
+}

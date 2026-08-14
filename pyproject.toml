@@ -1,0 +1,58 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cladbench"
+version = "1.0.0"
+description = "An evaluation benchmark for large language models on the UK and EU built environment"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "Apache-2.0" }
+authors = [{ name = "Ramadoss Tamil Selvan", email = "cladbrain@gmail.com" }]
+keywords = [
+    "evaluation", "benchmark", "llm", "built-environment",
+    "building-regulations", "epc", "breeam", "ifc", "embodied-carbon",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+# Deliberately minimal. Recomputing the published scores from the released responses
+# needs none of the provider SDKs, and a reader checking our numbers should not have to
+# install four vendor clients to do it.
+dependencies = [
+    "jsonschema>=4.20",
+    "python-dotenv>=1.0",
+    "httpx>=0.27",
+    "tqdm>=4.66",
+]
+
+[project.optional-dependencies]
+anthropic = ["anthropic>=0.100"]
+openai = ["openai>=2.0"]
+google = ["google-genai>=2.0"]
+all = ["anthropic>=0.100", "openai>=2.0", "google-genai>=2.0"]
+
+[project.urls]
+Homepage = "https://github.com/cladbrain/cladbench"
+Repository = "https://github.com/cladbrain/cladbench"
+Issues = "https://github.com/cladbrain/cladbench/issues"
+
+[project.scripts]
+cladbench = "cladbench.cli:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["cladbench*"]
+
+[tool.setuptools.package-data]
+cladbench = ["schema.json", "data/*/*.jsonl"]

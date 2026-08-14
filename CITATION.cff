@@ -1,0 +1,38 @@
+cff-version: 1.2.0
+title: "CladBench v1: A Twelve-Category Benchmark for Large Language Models on the UK and EU Built Environment"
+message: "If you use this benchmark, please cite it as below."
+type: dataset
+authors:
+  - family-names: "Selvan"
+    given-names: "Ramadoss Tamil"
+    email: cladbrain@gmail.com
+    city: London
+    country: GB
+version: "1.0.0"
+date-released: "2026-08-14"
+license: Apache-2.0
+repository-code: "https://github.com/cladbrain/cladbench"
+keywords:
+  - evaluation benchmark
+  - large language models
+  - built environment
+  - building regulations
+  - energy performance certificates
+  - BREEAM
+  - IFC
+  - embodied carbon
+  - net zero
+abstract: >-
+  CladBench v1 is an open benchmark of 536 questions across twelve categories of
+  UK and EU built-environment practice, covering Building Regulations, EPC
+  trajectory estimation, IFC entity reasoning, BMS sensor anomaly
+  classification, retrofit prioritisation, BREEAM credit eligibility, thermal
+  comfort diagnosis, CIBSE technical guidance, material and embodied-carbon
+  specification, energy-bill anomaly detection, net-zero pathway reasoning and
+  regulatory cliff-edge reasoning. Seven contemporary models were evaluated,
+  with all rubric-graded answers marked by two judges that are not themselves
+  evaluated. Reference answers are labelled by evidential status: 196 verified
+  against a primary source, 257 resting on multi-model agreement, and 83
+  recorded as not usable as ground truth with a stated reason. All 3,752
+  per-question model outputs are released so the scores can be recomputed
+  without access to any evaluated model.

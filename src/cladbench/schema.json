@@ -1,0 +1,201 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cladbrain.com/schema/cladbench-v1.json",
+  "title": "CladBench v1 Example",
+  "description": "Universal schema for a single CladBench evaluation example. One JSON object per line in the JSONL datasets.",
+  "type": "object",
+  "required": [
+    "id",
+    "category",
+    "format",
+    "split",
+    "question",
+    "answer",
+    "grading"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^cb1-(0[1-9]|1[0-2])-(public|holdout)-[0-9]{4}$",
+      "description": "Stable identifier. Format: cb1-{NN}-{split}-{0001..} e.g. cb1-01-public-0042."
+    },
+    "category": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 12,
+      "description": "Category number 1-12 as defined in category_specs.md."
+    },
+    "category_name": {
+      "type": "string",
+      "description": "Human-readable category name for convenience. Must match category_specs.md."
+    },
+    "format": {
+      "type": "string",
+      "enum": ["mcq", "short_answer", "ranking", "open_answer", "mcq_with_rationale"],
+      "description": "Question format. Determines required fields in answer and grading."
+    },
+    "split": {
+      "type": "string",
+      "enum": ["public", "holdout"],
+      "description": "Whether this example is in the public release set or the private holdout."
+    },
+    "question": {
+      "type": "object",
+      "required": ["text"],
+      "properties": {
+        "text": {
+          "type": "string",
+          "minLength": 10,
+          "description": "The full question prompt as it will be presented to the model."
+        },
+        "options": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 2,
+          "maxItems": 8,
+          "description": "Required for mcq and mcq_with_rationale. Choice labels (A, B, C...) are derived from index."
+        },
+        "context": {
+          "type": "string",
+          "description": "Optional structured context: time-series data, IFC snippet, building description. Presented before question.text."
+        },
+        "candidates": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Required for ranking. Items to be ranked. Labels are derived from index (a, b, c...)."
+        }
+      }
+    },
+    "answer": {
+      "type": "object",
+      "description": "The reference answer in the format appropriate for this question.",
+      "properties": {
+        "choice": {
+          "type": "string",
+          "pattern": "^[A-H]$",
+          "description": "For mcq and mcq_with_rationale: the letter of the correct option."
+        },
+        "text": {
+          "type": "string",
+          "description": "For short_answer and open_answer: the reference answer text."
+        },
+        "ranking": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^[a-h]$" },
+          "description": "For ranking: ordered list of candidate labels (best first)."
+        },
+        "rationale": {
+          "type": "string",
+          "description": "For mcq_with_rationale and some short_answer: the explanation/justification expected."
+        },
+        "citation": {
+          "type": "string",
+          "description": "Optional. Specific clause / standard / publication the answer cites. Used in regulation categories."
+        }
+      }
+    },
+    "grading": {
+      "type": "object",
+      "required": ["method"],
+      "properties": {
+        "method": {
+          "type": "string",
+          "enum": ["exact_match", "exact_match_plus_judge", "llm_judge_rubric", "spearman_plus_judge", "band_tolerance"],
+          "description": "How to score a model's response against the answer. band_tolerance is used for judgement categories where +-1 band of the reference is acceptable."
+        },
+        "rubric": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["criterion", "max_points"],
+            "properties": {
+              "criterion": { "type": "string" },
+              "max_points": { "type": "integer", "minimum": 1, "maximum": 5 },
+              "description": { "type": "string" }
+            }
+          },
+          "description": "Required for llm_judge_rubric. Scoring criteria for the LLM judge."
+        },
+        "judge_model": {
+          "type": "string",
+          "description": "Override the default LLM judge for this example. Defaults to Claude (latest)."
+        },
+        "case_sensitive": {
+          "type": "boolean",
+          "default": false,
+          "description": "For exact_match: whether comparison is case-sensitive."
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "description": "Provenance for audit and re-curation.",
+      "properties": {
+        "primary": {
+          "type": "string",
+          "description": "Citable primary source (e.g. 'Approved Document L1A 2021, Table 4.1')."
+        },
+        "curator": {
+          "type": "string",
+          "enum": ["hand", "claude_generated", "claude_generated_then_edited"],
+          "description": "How this example was created."
+        },
+        "review_status": {
+          "type": "string",
+          "enum": ["draft", "cross_validated", "reviewed", "locked", "primary_source_verified", "unverifiable"],
+          "description": "Curation review state. 'cross_validated' means other models agreed with the answer; 'reviewed' means Tamil read it; 'primary_source_verified' means the answer was checked against the primary document it cites. 'unverifiable' means the question was checked and the check could NOT settle it — the answer requires a source that is not obtainable, or modelling that has not been run. It is an outcome, not a gap, and such questions must not be counted as verified. The reason is carried in source.unverifiable_reason. 'primary_source_verified' is a stronger claim than 'cross_validated', because model agreement is not evidence — 14 of the answers replaced during cross-review were later found to be wrong."
+        },
+        "reviewed_at": {
+          "type": "string",
+          "format": "date",
+          "description": "Date Tamil last reviewed this example. Set only by Tamil; machine verification records verified_at instead."
+        },
+        "verified_at": {
+          "type": "string",
+          "format": "date",
+          "description": "Date the answer was last checked against its primary source."
+        },
+        "unverifiable_reason": {
+          "type": "string",
+          "description": "Why the check could not settle this question, and what would settle it. Present only when review_status is 'unverifiable'."
+        },
+        "correction": {
+          "type": "string",
+          "enum": ["rewrite", "rescore", "citation"],
+          "description": "What verification changed, which determines what had to be redone. 'rewrite' — question or option text changed, so stored model responses were discarded and regenerated. 'rescore' — only the answer key changed, so stored responses were re-marked without re-running. 'citation' — provenance metadata only; nothing re-run, nothing re-scored."
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Free-form tags for slicing the dataset at evaluation time.",
+      "properties": {
+        "difficulty": {
+          "type": "string",
+          "enum": ["foundation", "practitioner", "expert"],
+          "description": "Approximate difficulty for a domain expert."
+        },
+        "tags": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Free tags e.g. 'fabric', 'mees', 'retrofit', 'commercial'."
+        },
+        "policy_dependency": {
+          "type": "string",
+          "enum": ["settled", "live"],
+          "description": "Whether the reference answer's correctness depends on a policy position that can move. 'live' means it rests on a regulation not yet in force, under open consultation, or commencing after the dataset as-at date; 'settled' means it does not. Assigned mechanically from the answer's content and never from how any model scored, so the split cannot be tuned to flatter a result. A 'live' answer is reproducible but not durable: the saved score always recomputes, while the ground truth expires."
+        },
+        "policy_targets": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Keys from cladbench.moving_targets this answer depends on, e.g. 'mees_nondom'. Absent or empty for settled questions."
+        },
+        "as_at": {
+          "type": "string",
+          "format": "date",
+          "description": "For 'live' questions, the date the policy position in the reference answer was last established. Scores on this question are valid only as at this date."
+        }
+      }
+    }
+  }
+}

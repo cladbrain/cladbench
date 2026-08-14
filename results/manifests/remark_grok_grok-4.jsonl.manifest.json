@@ -1,0 +1,8 @@
+{
+  "judge": "grok:grok-4",
+  "harness_version": "2.0.0",
+  "dataset_hash": "2b635ce94ec2208f3df54f8792cfa77070c31cc7fa77ac1ba94704df49a802ab",
+  "marked": 28,
+  "failed": 0,
+  "wall_clock_min": 3.0
+}
