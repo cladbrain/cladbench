@@ -12,17 +12,12 @@
 \usepackage{textcomp}
 \setlength{\emergencystretch}{3em}
 \title{CladBench v1: A Twelve-Category Benchmark for Large Language Models on the UK and EU Built Environment}
-\author{Ramadoss Tamil Selvan}
+\author{Ramadoss Tamil Selvan \\[2pt] \small Independent researcher, London, United Kingdom \\ Correspondence: cladbrain@gmail.com}
 \date{Results as at 13 August 2026.}
 \begin{document}
 \maketitle
 
-Independent researcher, London, United Kingdom
-Correspondence: cladbrain@gmail.com
-
-
-
-\section{Abstract}
+\section*{Abstract}
 
 CladBench v1 is an open benchmark of 536 questions across twelve categories of UK and EU built-environment practice: Building Regulations, EPC trajectory estimation, IFC entity reasoning, BMS sensor anomaly classification, retrofit prioritisation, BREEAM credit eligibility, thermal comfort diagnosis, CIBSE technical guidance, material and embodied-carbon specification, energy-bill anomaly detection, net-zero pathway reasoning, and regulatory cliff-edge reasoning. Five task formats and five grading methods are used. Seven contemporary models were evaluated: Claude Opus 4.7 and 4.8, GPT-5, Gemini 2.5 Pro, GPT-4o, and two open-weights models served at FP8, Llama 3.3 70B Instruct Turbo and Qwen 2.5 7B Instruct Turbo. All rubric-graded answers were marked by two judges that are not themselves evaluated here.
 
@@ -399,7 +394,7 @@ The useful signal is not that ranking. Three findings sit behind it.
 The dataset, evaluation code, and all 3,752 per-question outputs are released for reuse and re-scoring.
 
 
-\section{References}
+\section*{References}
 
 Bommasani, R. et al. (2021). \emph{On the Opportunities and Risks of Foundation Models.} arXiv:2108.07258.
 
@@ -426,7 +421,8 @@ European Union (2024). \emph{Directive (EU) 2024/1275 on the energy performance 
 buildingSMART International. \emph{IFC4 EXPRESS schema specification.}
 
 
-\section{Appendix A --- Reproduction}
+\appendix
+\section{Reproduction}
 
 \begin{verbatim}
 git clone https://github.com/cladbrain/cladbench
@@ -453,7 +449,7 @@ python -m cladbench score --input results/responses/full_opus47.jsonl \
 
 The \texttt{score} command requires no API key and no access to any evaluated model. Run against the released Claude Opus 4.7 outputs it recomputes 243 of the 536 rows --- every row graded by a deterministic method --- and reproduces all 243 stored scores exactly. The remaining 293 rows are rubric-graded and are reported as needing a judge rather than being carried over from the stored value.
 
-\section{Appendix B --- Released artefacts}
+\section{Released artefacts}
 
 \begin{center}
 \begin{tabular}{ll}
