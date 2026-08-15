@@ -1,7 +1,12 @@
 # CladBench v1
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21951911.svg)](https://doi.org/10.5281/zenodo.21951911)
+[![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
+
 An open evaluation benchmark for large language models on the UK and EU built environment.
 536 questions across twelve categories, with every model response and score released.
+
+📄 **[Read the paper](paper/cladbench_v1.pdf)** — 12 pages, PDF
 
 *Results as at 13 August 2026.*
 
@@ -144,13 +149,16 @@ results/responses/    every model response and score, one file per model
 results/judges/       the two neutral judges' marks, per answer
 results/manifests/    dataset hash, harness version and token usage per run
 docs/                 schema reference, category specifications, ledger, result tables
-paper/                the paper, in Markdown and LaTeX
+paper/                the paper as PDF, Markdown and LaTeX
 ```
 
 ## Citing
 
-See `CITATION.cff`, or cite the paper: Selvan, R. T. (2026). *CladBench v1: A
-Twelve-Category Benchmark for Large Language Models on the UK and EU Built Environment.*
+Selvan, R. T. (2026). *CladBench v1: A Twelve-Category Benchmark for Large Language Models
+on the UK and EU Built Environment.* https://doi.org/10.5281/zenodo.21951911
+
+That DOI always resolves to the latest version. To cite this specific release, use
+`10.5281/zenodo.21951912`. Machine-readable metadata is in `CITATION.cff`.
 
 ## Licence and source material
 

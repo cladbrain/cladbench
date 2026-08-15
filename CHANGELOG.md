@@ -7,6 +7,15 @@ versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 A change to a reference answer changes what the benchmark measures, so answer-key
 corrections are listed individually rather than summarised.
 
+## [1.0.2] — 2026-08-15
+
+### Added
+
+- `paper/cladbench_v1.pdf` — the compiled paper. Previous releases shipped only Markdown
+  and LaTeX, so reading the paper meant compiling it. 12 pages.
+- DOI. The concept DOI `10.5281/zenodo.21951911` resolves to the latest version;
+  `10.5281/zenodo.21951912` pins v1.0.1. Recorded in `CITATION.cff` and the README.
+
 ## [1.0.1] — 2026-08-15
 
 Provenance and typesetting corrections. No question text, reference answer or score
