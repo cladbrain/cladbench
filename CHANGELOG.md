@@ -7,6 +7,19 @@ versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 A change to a reference answer changes what the benchmark measures, so answer-key
 corrections are listed individually rather than summarised.
 
+## [1.0.3] — 2026-08-15
+
+### Fixed
+
+- Four tables in the compiled paper ran off the right edge, losing content: the
+  composition table, the evidential-status warrants table, the results-by-evidential-status
+  table, and the released-artefacts table. Every column was set to a non-wrapping type and
+  the scaling rule only applied at six columns or more, which none of the four reached.
+  Tables with a prose column now wrap it; tables that are numeric but too wide are scaled.
+  The PDF is replaced.
+
+No question text, reference answer or score changed.
+
 ## [1.0.2] — 2026-08-15
 
 ### Added
