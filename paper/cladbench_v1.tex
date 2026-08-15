@@ -6,6 +6,7 @@
 \usepackage{booktabs}
 \usepackage{graphicx}
 \usepackage{array}
+\usepackage{tabularx}
 \usepackage{longtable}
 \usepackage[hidelinks]{hyperref}
 \usepackage{parskip}
@@ -77,7 +78,8 @@ The categories are not twelve samples of one skill. Categories 1, 3, 4, 6 and 8 
 \subsection{Composition}
 
 \begin{center}
-\begin{tabular}{ll}
+\small
+\begin{tabularx}{\textwidth}{l>{\raggedright\arraybackslash}X}
 \toprule
 Dimension & Distribution \\
 \midrule
@@ -86,7 +88,7 @@ Grading method & exact\_match 193, llm\_judge\_rubric 159, exact\_match\_plus\_j
 Difficulty tag & practitioner 413, expert 97, foundation 26 \\
 Question length & median 317 characters, range 58--812 \\
 \bottomrule
-\end{tabular}
+\end{tabularx}
 \end{center}
 
 \subsection{Grading methods}
@@ -115,7 +117,8 @@ In the ten categories whose answers are stated in a document, each reference ans
 Reference answers carry one of three evidential statuses, and we report them separately because they are not equivalent.
 
 \begin{center}
-\begin{tabular}{lll}
+\small
+\begin{tabularx}{\textwidth}{lr>{\raggedright\arraybackslash}X}
 \toprule
 Status & n & Warrant \\
 \midrule
@@ -123,7 +126,7 @@ Status & n & Warrant \\
 \texttt{cross\_validated} / \texttt{reviewed} & \textbf{257} & Three frontier models were asked whether the answer was right, and agreed \\
 \texttt{unverifiable} & \textbf{83} & Checked, and recorded as not usable as ground truth, with a stated reason \\
 \bottomrule
-\end{tabular}
+\end{tabularx}
 \end{center}
 
 \textbf{Cross-validation is the weaker warrant and should be read as such.} On Category 1 it passed all 55 questions, of which 45 subsequently required correction when the Approved Documents were opened --- most often citation drift, where a correct value was attributed to the wrong table. Model agreement measures consensus among instruments that share a failure mode; it is not the same as reading the document.
@@ -257,6 +260,7 @@ Which category a task falls in therefore matters more than which model runs it, 
 \subsection{Performance by answer-key evidential status}
 
 \begin{center}
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{lrrrr}
 \toprule
 Model & All (n=536) & Primary-source (n=196) & Cross-validated (n=257) & Unverifiable (n=83) \\
@@ -270,6 +274,7 @@ Llama 3.3 70B (FP8) & 0.655 & \textbf{0.565} & 0.696 & 0.741 \\
 Qwen 2.5 7B (FP8) & 0.540 & \textbf{0.490} & 0.572 & 0.558 \\
 \bottomrule
 \end{tabular}
+}
 \end{center}
 
 \textbf{This table is a robustness diagnostic, not an alternative headline, and the reason is composition.} The 196 primary-source questions are not a scaled-down copy of the benchmark: 164 of them (84\%) come from four categories, and Categories 4, 5 and 11 contribute none at all. What a source document can settle is not evenly distributed across the twelve categories --- a threshold printed in an Approved Document can be located, a recommended retrofit ordering cannot. Reading the primary-source column as "the benchmark, done properly" would silently drop a quarter of the categories, including BMS anomaly classification, where every model scores near 0.95, and net-zero pathway reasoning, where the spread is widest. The 536-question figure remains the benchmark result.
@@ -452,7 +457,8 @@ The \texttt{score} command requires no API key and no access to any evaluated mo
 \section{Released artefacts}
 
 \begin{center}
-\begin{tabular}{ll}
+\small
+\begin{tabularx}{\textwidth}{l>{\raggedright\arraybackslash}X}
 \toprule
 Artefact & Contents \\
 \midrule
@@ -463,7 +469,7 @@ Per-question outputs & 3,752 records: model response, score and per-criterion br
 Judge marks & Both neutral judges and the Claude comparison pass, per answer \\
 Run manifests & Dataset hash, harness version, model identifiers, token usage per run \\
 \bottomrule
-\end{tabular}
+\end{tabularx}
 \end{center}
 
 Any third party can re-score or re-judge any subset from the released outputs without API access to the evaluated models.
