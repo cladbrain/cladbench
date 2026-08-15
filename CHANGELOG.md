@@ -7,6 +7,29 @@ versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 A change to a reference answer changes what the benchmark measures, so answer-key
 corrections are listed individually rather than summarised.
 
+## [1.0.1] — 2026-08-15
+
+Provenance and typesetting corrections. No question text, reference answer or score
+changed, so all published results stand unaltered.
+
+### Changed
+
+- `source.reviewed_at` renamed to `source.curated_at`. The field was documented as the
+  date the maintainer last reviewed the example. It did not record that: 516 of the 536
+  questions carried the identical date across all twelve categories, which is a curation
+  script writing a timestamp, not a person reading 516 questions in a day. The dates are
+  retained under a name that describes them.
+- `SCHEMA.md` now documents the provenance fields, and states plainly that no question in
+  v1 has been read and approved by a domain professional, and that no field asserts
+  otherwise.
+- `LICENSE` replaced with the full Apache 2.0 text. It had been a fifteen-line summary
+  pointing at apache.org, which GitHub could not identify, so the repository reported no
+  licence.
+- `paper/cladbench_v1.tex`: the Abstract was typesetting as numbered section 1, shifting
+  every later section by one and misdirecting all fourteen "Section 5.4"-style
+  cross-references in the prose. Abstract and References are now unnumbered and appendices
+  are lettered.
+
 ## [1.0.0] — 2026-08-14
 
 First public release. 536 questions across twelve categories, seven evaluated models,
