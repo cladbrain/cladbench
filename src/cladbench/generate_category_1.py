@@ -102,7 +102,7 @@ Hard constraints:
 - answer.citation MUST cite a specific document + section + table reference (e.g., "Approved Document L1A 2021, Table 4.1" or "Approved Document B Volume 2 (2019), Section 5.3")
 - source.curator MUST be "claude_generated"
 - source.review_status MUST be "draft"
-- source.reviewed_at MUST be "2026-06-18"
+- source.curated_at MUST be "2026-06-18"
 - source.primary should match answer.citation
 - metadata.difficulty MUST be "practitioner"
 - metadata.tags MUST include 3-5 relevant tags including a part-X tag (e.g. "part-l")
@@ -124,7 +124,7 @@ def load_schema_block() -> str:
   "question": {"text": "...", "options": ["A...", "B...", "C...", "D..."]},
   "answer": {"choice": "B", "citation": "Approved Document X, Table Y"},
   "grading": {"method": "exact_match", "case_sensitive": false},
-  "source": {"primary": "Approved Document X, Table Y", "curator": "claude_generated", "review_status": "draft", "reviewed_at": "2026-06-18"},
+  "source": {"primary": "Approved Document X, Table Y", "curator": "claude_generated", "review_status": "draft", "curated_at": "2026-06-18"},
   "metadata": {"difficulty": "practitioner", "tags": ["...", "...", "part-X"]}
 }"""
 

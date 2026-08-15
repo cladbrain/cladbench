@@ -54,7 +54,7 @@ Hard constraints:
 - answer.citation MUST cite BREEAM NC 2018 (SD5078), BREEAM RFO 2014, or BREEAM In-Use as appropriate
 - grading.method MUST be "exact_match_plus_judge"
 - grading.rubric MUST be exactly: [{{"criterion": "Correct qualification choice", "max_points": 3}}, {{"criterion": "Rationale references specific BREEAM requirement", "max_points": 1}}, {{"criterion": "Rationale shows understanding of credit criteria", "max_points": 1}}]
-- source.curator = "claude_generated"; review_status = "draft"; reviewed_at = "2026-06-18"
+- source.curator = "claude_generated"; review_status = "draft"; curated_at = "2026-06-18"
 - difficulty = "practitioner"; tags include "breeam" + the specific credit code (e.g. "man-01")
 - IDs cb1-06-public-XXXX starting from {next_id:04d}
 - Distribute correct answers across A-D roughly evenly across the batch
@@ -73,7 +73,7 @@ def load_schema_block() -> str:
   "question": {"text": "...scheme + credit + qualification question...", "options": ["A...", "B...", "C...", "D..."]},
   "answer": {"choice": "A", "rationale": "...", "citation": "BREEAM NC 2018 (SD5078), ..."},
   "grading": {"method": "exact_match_plus_judge", "rubric": [{"criterion": "Correct qualification choice", "max_points": 3}, {"criterion": "Rationale references specific BREEAM requirement", "max_points": 1}, {"criterion": "Rationale shows understanding of credit criteria", "max_points": 1}]},
-  "source": {"primary": "BREEAM NC 2018 SD5078, ...", "curator": "claude_generated", "review_status": "draft", "reviewed_at": "2026-06-18"},
+  "source": {"primary": "BREEAM NC 2018 SD5078, ...", "curator": "claude_generated", "review_status": "draft", "curated_at": "2026-06-18"},
   "metadata": {"difficulty": "practitioner", "tags": ["breeam", "..."]}
 }"""
 

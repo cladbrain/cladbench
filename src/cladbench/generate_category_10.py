@@ -55,7 +55,7 @@ Hard constraints:
 - answer.citation MUST cite CIBSE TM22, TM39, TM41, TM44, TM65, Carbon Trust guides, Ofgem rules, or similar
 - grading.method MUST be "llm_judge_rubric"
 - grading.rubric MUST be exactly 3 criteria each worth 1 point: cause identification, supporting reasoning or rule-out, diagnostic/remediation recommendation
-- source.curator = "claude_generated"; review_status = "draft"; reviewed_at = "2026-06-18"
+- source.curator = "claude_generated"; review_status = "draft"; curated_at = "2026-06-18"
 - difficulty = "practitioner" or "expert" or "foundation"; tags include "energy-anomaly" + a building-type tag
 - IDs cb1-10-public-XXXX starting from {next_id:04d}
 - Use realistic numbers (kWh/m2/yr ranges that match CIBSE Guide F benchmarks)
@@ -73,7 +73,7 @@ def load_schema_block() -> str:
   "question": {"text": "...scenario + numbers + 'identify cause and recommend action'", "context": "One-line anomaly pattern"},
   "answer": {"text": "Primary cause: ... Evidence: ... Diagnostic: ...", "citation": "CIBSE TM39; ..."},
   "grading": {"method": "llm_judge_rubric", "rubric": [{"criterion": "Identifies primary cause", "max_points": 1}, {"criterion": "Supports reasoning or rules out alternatives", "max_points": 1}, {"criterion": "Recommends diagnostic or remediation step", "max_points": 1}]},
-  "source": {"primary": "CIBSE TM39 / ...", "curator": "claude_generated", "review_status": "draft", "reviewed_at": "2026-06-18"},
+  "source": {"primary": "CIBSE TM39 / ...", "curator": "claude_generated", "review_status": "draft", "curated_at": "2026-06-18"},
   "metadata": {"difficulty": "practitioner", "tags": ["energy-anomaly", "..."]}
 }"""
 

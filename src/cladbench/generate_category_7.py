@@ -55,7 +55,7 @@ Hard constraints:
 - answer.citation MUST cite CIBSE TM52, TM59, Guide A, Guide B, Guide H, ISO 7730, BB101, HTM 03-01 or other relevant CIBSE/UK guidance as appropriate
 - grading.method MUST be "llm_judge_rubric"
 - grading.rubric MUST be exactly 5 criteria each worth 1 point: methodology reference, primary cause identification, secondary cause identification, measurement/investigation recommendation, remediation action recommendation
-- source.curator = "claude_generated"; review_status = "draft"; reviewed_at = "2026-06-18"
+- source.curator = "claude_generated"; review_status = "draft"; curated_at = "2026-06-18"
 - difficulty = "practitioner" or "expert"; tags include "thermal-comfort"
 - IDs cb1-07-public-XXXX starting from {next_id:04d}
 - Use realistic UK locations, real CIBSE methodologies, plausible temperatures and complaints
@@ -73,7 +73,7 @@ def load_schema_block() -> str:
   "question": {"text": "...scenario + 'Diagnose under TM52 and recommend...' instruction..."},
   "answer": {"text": "Methodology... Primary cause... Secondary causes... Recommended: (1)... (2)... (3)...", "citation": "CIBSE TM52 (2013); ..."},
   "grading": {"method": "llm_judge_rubric", "rubric": [{"criterion": "References TM52 methodology by name", "max_points": 1}, {"criterion": "Identifies primary cause correctly", "max_points": 1}, {"criterion": "Identifies secondary cause", "max_points": 1}, {"criterion": "Recommends measurement or modelling step", "max_points": 1}, {"criterion": "Recommends remediation action", "max_points": 1}]},
-  "source": {"primary": "CIBSE TM52, ...", "curator": "claude_generated", "review_status": "draft", "reviewed_at": "2026-06-18"},
+  "source": {"primary": "CIBSE TM52, ...", "curator": "claude_generated", "review_status": "draft", "curated_at": "2026-06-18"},
   "metadata": {"difficulty": "practitioner", "tags": ["thermal-comfort", "..."]}
 }"""
 

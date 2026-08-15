@@ -57,7 +57,7 @@ Hard constraints:
 - answer.citation MUST cite EN 15804, EN 15978, EPD registry, IStructE How to calculate embodied carbon, CIBSE TM65, manufacturer EPDs, or similar
 - grading.method MUST be "exact_match_plus_judge"
 - grading.rubric MUST be exactly: [{{"criterion": "Correct qualification choice", "max_points": 3}}, {{"criterion": "Calculation shown in rationale", "max_points": 1}}, {{"criterion": "Rationale references methodology / caveat", "max_points": 1}}]
-- source.curator = "claude_generated"; review_status = "draft"; reviewed_at = "2026-06-18"
+- source.curator = "claude_generated"; review_status = "draft"; curated_at = "2026-06-18"
 - difficulty = "practitioner" or "expert"; tags include "material" and "embodied-carbon" + a topic tag
 - IDs cb1-09-public-XXXX starting from {next_id:04d}
 - Distribute correct answers across A-D roughly evenly across the batch
@@ -76,7 +76,7 @@ def load_schema_block() -> str:
   "question": {"text": "...material scenario + question with numbers...", "options": ["A...", "B...", "C...", "D..."]},
   "answer": {"choice": "B", "rationale": "Calculation: ... Conclusion: ... Caveat: ...", "citation": "EN 15804+A2; ..."},
   "grading": {"method": "exact_match_plus_judge", "rubric": [{"criterion": "Correct qualification choice", "max_points": 3}, {"criterion": "Calculation shown in rationale", "max_points": 1}, {"criterion": "Rationale references methodology / caveat", "max_points": 1}]},
-  "source": {"primary": "EN 15804+A2; ...", "curator": "claude_generated", "review_status": "draft", "reviewed_at": "2026-06-18"},
+  "source": {"primary": "EN 15804+A2; ...", "curator": "claude_generated", "review_status": "draft", "curated_at": "2026-06-18"},
   "metadata": {"difficulty": "practitioner", "tags": ["material", "embodied-carbon", "..."]}
 }"""
 

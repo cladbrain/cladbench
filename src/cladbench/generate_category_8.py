@@ -55,7 +55,7 @@ Hard constraints:
 - answer.choice MUST be A, B, C, or D
 - answer.citation MUST cite specific CIBSE Guide section or TM number, e.g. "CIBSE Guide B2, Section 5"
 - grading.method MUST be "exact_match" with case_sensitive false
-- source.curator = "claude_generated"; review_status = "draft"; reviewed_at = "2026-06-18"
+- source.curator = "claude_generated"; review_status = "draft"; curated_at = "2026-06-18"
 - source.primary should match answer.citation
 - difficulty = "practitioner" or "foundation"; tags include "cibse" and a specific guide/TM tag
 - IDs cb1-08-public-XXXX starting from {next_id:04d}
@@ -75,7 +75,7 @@ def load_schema_block() -> str:
   "question": {"text": "...CIBSE technical question...", "options": ["A...", "B...", "C...", "D..."]},
   "answer": {"choice": "B", "citation": "CIBSE Guide X / TM XX, Section Y"},
   "grading": {"method": "exact_match", "case_sensitive": false},
-  "source": {"primary": "CIBSE Guide X / TM XX", "curator": "claude_generated", "review_status": "draft", "reviewed_at": "2026-06-18"},
+  "source": {"primary": "CIBSE Guide X / TM XX", "curator": "claude_generated", "review_status": "draft", "curated_at": "2026-06-18"},
   "metadata": {"difficulty": "practitioner", "tags": ["cibse", "..."]}
 }"""
 

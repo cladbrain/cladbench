@@ -61,7 +61,9 @@ Every question must validate against `src/cladbench/schema.json`.
 
 - Changes to a published reference answer without a primary-source citation.
 - Removal of a question because a model scores badly on it.
-- Edits to `source.reviewed_at`, which records human review by the maintainer.
+- Edits to `source.curated_at`. It is a provenance timestamp recording when the record was
+  written by the curation tooling, not a review date, and rewriting it would falsify the
+  record's history.
 
 ## Conduct
 

@@ -56,7 +56,7 @@ Hard constraints:
 - answer.citation MUST cite the specific Act / Regulation / Approved Document by name and year
 - grading.method MUST be "llm_judge_rubric"
 - grading.rubric MUST be exactly 3 criteria each worth 1 point: factual date/threshold correct, mechanism or scope correct, caveat or trajectory awareness
-- source.curator = "claude_generated"; review_status = "draft"; reviewed_at = "2026-06-18"
+- source.curator = "claude_generated"; review_status = "draft"; curated_at = "2026-06-18"
 - difficulty = "practitioner" or "foundation" or "expert"; tags include "regulatory" + a specific regime tag (e.g. "mees", "part-l", "esos")
 - IDs cb1-12-public-XXXX starting from {next_id:04d}
 - Be carefully accurate about UK regulation status as of June 2026. Many policies are proposed not enacted — flag this. Do NOT invent dates.
@@ -74,7 +74,7 @@ def load_schema_block() -> str:
   "question": {"text": "...regulatory scenario + specific question..."},
   "answer": {"text": "Specific date / threshold / penalty + mechanism + caveat", "citation": "Specific Act/Regulation/AD with year"},
   "grading": {"method": "llm_judge_rubric", "rubric": [{"criterion": "Factual date/threshold correct", "max_points": 1}, {"criterion": "Mechanism or scope correct", "max_points": 1}, {"criterion": "Caveat or trajectory awareness", "max_points": 1}]},
-  "source": {"primary": "Specific Act/Regulation/AD", "curator": "claude_generated", "review_status": "draft", "reviewed_at": "2026-06-18"},
+  "source": {"primary": "Specific Act/Regulation/AD", "curator": "claude_generated", "review_status": "draft", "curated_at": "2026-06-18"},
   "metadata": {"difficulty": "practitioner", "tags": ["regulatory", "..."]}
 }"""
 

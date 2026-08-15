@@ -74,7 +74,7 @@ Hard constraints:
 - answer.rationale MUST briefly justify the ranking
 - grading.method MUST be "spearman_plus_judge"
 - grading.rubric MUST be exactly: [{{"criterion": "Spearman rank correlation with reference >= 0.7", "max_points": 3}}, {{"criterion": "Fabric-first sequencing applied", "max_points": 2}}]
-- source.curator = "claude_generated"; review_status = "draft"; reviewed_at = "2026-06-18"
+- source.curator = "claude_generated"; review_status = "draft"; curated_at = "2026-06-18"
 - source.primary should reference PAS 2035:2023 or relevant CIBSE guidance
 - difficulty = "practitioner"; tags include "retrofit", "ranking"
 - IDs cb1-05-public-XXXX starting from {next_id:04d}
@@ -94,7 +94,7 @@ def load_schema_block() -> str:
   "question": {"text": "...scenario + ranking instruction...", "candidates": ["measure a £X, saves Y tCO₂e/yr, Z-yr life", ...]},
   "answer": {"ranking": ["a","b","c","d","e","f"], "rationale": "..."},
   "grading": {"method": "spearman_plus_judge", "rubric": [{"criterion": "Spearman rank correlation with reference >= 0.7", "max_points": 3}, {"criterion": "Fabric-first sequencing applied", "max_points": 2}]},
-  "source": {"primary": "PAS 2035:2023", "curator": "claude_generated", "review_status": "draft", "reviewed_at": "2026-06-18"},
+  "source": {"primary": "PAS 2035:2023", "curator": "claude_generated", "review_status": "draft", "curated_at": "2026-06-18"},
   "metadata": {"difficulty": "practitioner", "tags": ["retrofit", "ranking", "..."]}
 }"""
 

@@ -35,6 +35,24 @@ Every example must have:
 - `answer` — fields depend on `format`
 - `grading` — with at minimum `grading.method`
 
+## Provenance fields in `source`
+
+These record how much evidence stands behind an answer. They are not interchangeable, and
+a reader weighing a reference answer should look at them before trusting it.
+
+| Field | Meaning |
+|---|---|
+| `curator` | who produced the question. All 536 public questions were model-generated; the `hand` label denotes questions the model wrote during seeding, not human authorship |
+| `review_status` | the evidential tier: `primary_source_verified` (checked against the source document, or the calculation re-derived), `cross_validated` / `reviewed` (three frontier models agreed), `unverifiable` (checked, and recorded as not usable as ground truth), `draft` |
+| `verified_at` | date the answer was last checked against a primary source |
+| `curated_at` | date the record was last written by the curation tooling. **A provenance timestamp, not a review date** |
+| `unverifiable_reason` | required when `review_status` is `unverifiable` |
+| `correction` | what a verification pass changed: `rewrite`, `rescore` or `citation` |
+
+There is deliberately no field asserting human sign-off. No question in v1 has been read
+and approved by a domain professional, so recording a date that implied otherwise would
+misstate the dataset's provenance. If expert review happens, it gets its own field then.
+
 ## Format → required answer fields
 
 | `format` | Required in `answer` | `grading.method` typically |
@@ -77,7 +95,7 @@ Every example must have:
     "primary": "Approved Document L1A 2021, Table 4.1",
     "curator": "hand",
     "review_status": "locked",
-    "reviewed_at": "2026-07-08"
+    "curated_at": "2026-07-08"
   },
   "metadata": {
     "difficulty": "practitioner",

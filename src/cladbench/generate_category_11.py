@@ -57,7 +57,7 @@ Hard constraints:
 - answer.citation MUST cite real UK policy / standards: MEES, EPBD recast, UK Net Zero Strategy, PAS 2035, Future Homes Standard, SHDF, PSDS, SBTi, GRESB, NHS Net Zero, DfE Estate, LETI, BBP, etc.
 - grading.method MUST be "llm_judge_rubric"
 - grading.rubric MUST be exactly 5 criteria each worth 1 point: target alignment, intervention sequencing, capex realism, dependency awareness, regulatory awareness
-- source.curator = "claude_generated"; review_status = "draft"; reviewed_at = "2026-06-18"
+- source.curator = "claude_generated"; review_status = "draft"; curated_at = "2026-06-18"
 - difficulty = "expert" (this is portfolio-level strategy); tags include "net-zero-pathway" + a building-type or sector tag
 - IDs cb1-11-public-XXXX starting from {next_id:04d}
 - Use realistic UK regulatory context and plausible capex figures
@@ -75,7 +75,7 @@ def load_schema_block() -> str:
   "question": {"text": "...portfolio + target + capex + 'Propose pathway...'"},
   "answer": {"text": "2026-2030 — phase 1 interventions. 2030-2035 — phase 2. 2035-2040 — phase 3. Dependencies: ... Regulatory risks: ...", "citation": "MEES Regulations; UK Net Zero Strategy; ..."},
   "grading": {"method": "llm_judge_rubric", "rubric": [{"criterion": "Target alignment", "max_points": 1}, {"criterion": "Intervention sequencing", "max_points": 1}, {"criterion": "Capex realism", "max_points": 1}, {"criterion": "Dependency awareness", "max_points": 1}, {"criterion": "Regulatory awareness", "max_points": 1}]},
-  "source": {"primary": "MEES Regulations; UK Net Zero Strategy; ...", "curator": "claude_generated", "review_status": "draft", "reviewed_at": "2026-06-18"},
+  "source": {"primary": "MEES Regulations; UK Net Zero Strategy; ...", "curator": "claude_generated", "review_status": "draft", "curated_at": "2026-06-18"},
   "metadata": {"difficulty": "expert", "tags": ["net-zero-pathway", "..."]}
 }"""
 

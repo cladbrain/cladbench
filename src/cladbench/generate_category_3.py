@@ -83,7 +83,7 @@ Hard constraints:
 - answer.citation MUST cite a specific IFC entity / relationship / Pset / Qto / enum, e.g. "buildingSMART IFC4 specification, IfcDoor entity"
 - source.curator MUST be "claude_generated"
 - source.review_status MUST be "draft"
-- source.reviewed_at MUST be "2026-06-18"
+- source.curated_at MUST be "2026-06-18"
 - source.primary should match answer.citation
 - metadata.difficulty MUST be "practitioner" (or "foundation" for basic entity recognition)
 - metadata.tags MUST include 3-5 relevant tags including "ifc" and "ifc4"
@@ -104,7 +104,7 @@ def load_schema_block() -> str:
   "question": {"text": "...", "options": ["A...", "B...", "C...", "D..."]},
   "answer": {"choice": "B", "citation": "buildingSMART IFC4 specification, ..."},
   "grading": {"method": "exact_match", "case_sensitive": false},
-  "source": {"primary": "buildingSMART IFC4 specification, ...", "curator": "claude_generated", "review_status": "draft", "reviewed_at": "2026-06-18"},
+  "source": {"primary": "buildingSMART IFC4 specification, ...", "curator": "claude_generated", "review_status": "draft", "curated_at": "2026-06-18"},
   "metadata": {"difficulty": "practitioner", "tags": ["ifc", "ifc4", "..."]}
 }"""
 

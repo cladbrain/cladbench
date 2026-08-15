@@ -31,17 +31,28 @@
     },
     "format": {
       "type": "string",
-      "enum": ["mcq", "short_answer", "ranking", "open_answer", "mcq_with_rationale"],
+      "enum": [
+        "mcq",
+        "short_answer",
+        "ranking",
+        "open_answer",
+        "mcq_with_rationale"
+      ],
       "description": "Question format. Determines required fields in answer and grading."
     },
     "split": {
       "type": "string",
-      "enum": ["public", "holdout"],
+      "enum": [
+        "public",
+        "holdout"
+      ],
       "description": "Whether this example is in the public release set or the private holdout."
     },
     "question": {
       "type": "object",
-      "required": ["text"],
+      "required": [
+        "text"
+      ],
       "properties": {
         "text": {
           "type": "string",
@@ -50,7 +61,9 @@
         },
         "options": {
           "type": "array",
-          "items": { "type": "string" },
+          "items": {
+            "type": "string"
+          },
           "minItems": 2,
           "maxItems": 8,
           "description": "Required for mcq and mcq_with_rationale. Choice labels (A, B, C...) are derived from index."
@@ -61,7 +74,9 @@
         },
         "candidates": {
           "type": "array",
-          "items": { "type": "string" },
+          "items": {
+            "type": "string"
+          },
           "description": "Required for ranking. Items to be ranked. Labels are derived from index (a, b, c...)."
         }
       }
@@ -81,7 +96,10 @@
         },
         "ranking": {
           "type": "array",
-          "items": { "type": "string", "pattern": "^[a-h]$" },
+          "items": {
+            "type": "string",
+            "pattern": "^[a-h]$"
+          },
           "description": "For ranking: ordered list of candidate labels (best first)."
         },
         "rationale": {
@@ -96,22 +114,41 @@
     },
     "grading": {
       "type": "object",
-      "required": ["method"],
+      "required": [
+        "method"
+      ],
       "properties": {
         "method": {
           "type": "string",
-          "enum": ["exact_match", "exact_match_plus_judge", "llm_judge_rubric", "spearman_plus_judge", "band_tolerance"],
+          "enum": [
+            "exact_match",
+            "exact_match_plus_judge",
+            "llm_judge_rubric",
+            "spearman_plus_judge",
+            "band_tolerance"
+          ],
           "description": "How to score a model's response against the answer. band_tolerance is used for judgement categories where +-1 band of the reference is acceptable."
         },
         "rubric": {
           "type": "array",
           "items": {
             "type": "object",
-            "required": ["criterion", "max_points"],
+            "required": [
+              "criterion",
+              "max_points"
+            ],
             "properties": {
-              "criterion": { "type": "string" },
-              "max_points": { "type": "integer", "minimum": 1, "maximum": 5 },
-              "description": { "type": "string" }
+              "criterion": {
+                "type": "string"
+              },
+              "max_points": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 5
+              },
+              "description": {
+                "type": "string"
+              }
             }
           },
           "description": "Required for llm_judge_rubric. Scoring criteria for the LLM judge."
@@ -137,18 +174,24 @@
         },
         "curator": {
           "type": "string",
-          "enum": ["hand", "claude_generated", "claude_generated_then_edited"],
+          "enum": [
+            "hand",
+            "claude_generated",
+            "claude_generated_then_edited"
+          ],
           "description": "How this example was created."
         },
         "review_status": {
           "type": "string",
-          "enum": ["draft", "cross_validated", "reviewed", "locked", "primary_source_verified", "unverifiable"],
+          "enum": [
+            "draft",
+            "cross_validated",
+            "reviewed",
+            "locked",
+            "primary_source_verified",
+            "unverifiable"
+          ],
           "description": "Curation review state. 'cross_validated' means other models agreed with the answer; 'reviewed' means Tamil read it; 'primary_source_verified' means the answer was checked against the primary document it cites. 'unverifiable' means the question was checked and the check could NOT settle it — the answer requires a source that is not obtainable, or modelling that has not been run. It is an outcome, not a gap, and such questions must not be counted as verified. The reason is carried in source.unverifiable_reason. 'primary_source_verified' is a stronger claim than 'cross_validated', because model agreement is not evidence — 14 of the answers replaced during cross-review were later found to be wrong."
-        },
-        "reviewed_at": {
-          "type": "string",
-          "format": "date",
-          "description": "Date Tamil last reviewed this example. Set only by Tamil; machine verification records verified_at instead."
         },
         "verified_at": {
           "type": "string",
@@ -161,8 +204,17 @@
         },
         "correction": {
           "type": "string",
-          "enum": ["rewrite", "rescore", "citation"],
+          "enum": [
+            "rewrite",
+            "rescore",
+            "citation"
+          ],
           "description": "What verification changed, which determines what had to be redone. 'rewrite' — question or option text changed, so stored model responses were discarded and regenerated. 'rescore' — only the answer key changed, so stored responses were re-marked without re-running. 'citation' — provenance metadata only; nothing re-run, nothing re-scored."
+        },
+        "curated_at": {
+          "type": "string",
+          "format": "date",
+          "description": "Date this record was last written by the curation tooling. It is a provenance timestamp, not a statement that a person reviewed the question. Verification against a primary source is recorded in verified_at; human sign-off is not currently recorded."
         }
       }
     },
@@ -172,22 +224,33 @@
       "properties": {
         "difficulty": {
           "type": "string",
-          "enum": ["foundation", "practitioner", "expert"],
+          "enum": [
+            "foundation",
+            "practitioner",
+            "expert"
+          ],
           "description": "Approximate difficulty for a domain expert."
         },
         "tags": {
           "type": "array",
-          "items": { "type": "string" },
+          "items": {
+            "type": "string"
+          },
           "description": "Free tags e.g. 'fabric', 'mees', 'retrofit', 'commercial'."
         },
         "policy_dependency": {
           "type": "string",
-          "enum": ["settled", "live"],
+          "enum": [
+            "settled",
+            "live"
+          ],
           "description": "Whether the reference answer's correctness depends on a policy position that can move. 'live' means it rests on a regulation not yet in force, under open consultation, or commencing after the dataset as-at date; 'settled' means it does not. Assigned mechanically from the answer's content and never from how any model scored, so the split cannot be tuned to flatter a result. A 'live' answer is reproducible but not durable: the saved score always recomputes, while the ground truth expires."
         },
         "policy_targets": {
           "type": "array",
-          "items": { "type": "string" },
+          "items": {
+            "type": "string"
+          },
           "description": "Keys from cladbench.moving_targets this answer depends on, e.g. 'mees_nondom'. Absent or empty for settled questions."
         },
         "as_at": {

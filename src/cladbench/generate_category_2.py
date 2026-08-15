@@ -93,7 +93,7 @@ Hard constraints:
 - grading.rubric MUST include exactly three criteria: "Correct band identified" (max 3), "References specific measures applied" (max 1), "Shows quantitative reasoning" (max 1)
 - source.curator MUST be "claude_generated"
 - source.review_status MUST be "draft"
-- source.reviewed_at MUST be "2026-06-18"
+- source.curated_at MUST be "2026-06-18"
 - source.primary should be "SAP 10.2 methodology" or "RdSAP 2012 conventions"
 - metadata.difficulty MUST be "practitioner"
 - metadata.tags MUST include 3-5 relevant tags
@@ -115,7 +115,7 @@ def load_schema_block() -> str:
   "question": {"text": "...scenario... What is the most likely resulting EPC band? Answer with the band letter (A-G) on the first line, followed by a one-sentence justification."},
   "answer": {"text": "C", "rationale": "..."},
   "grading": {"method": "exact_match_plus_judge", "rubric": [{"criterion": "Correct band identified", "max_points": 3}, {"criterion": "References specific measures applied", "max_points": 1}, {"criterion": "Shows quantitative reasoning", "max_points": 1}]},
-  "source": {"primary": "SAP 10.2 methodology", "curator": "claude_generated", "review_status": "draft", "reviewed_at": "2026-06-18"},
+  "source": {"primary": "SAP 10.2 methodology", "curator": "claude_generated", "review_status": "draft", "curated_at": "2026-06-18"},
   "metadata": {"difficulty": "practitioner", "tags": ["epc", "..."]}
 }"""
 

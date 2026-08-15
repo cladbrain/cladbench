@@ -104,7 +104,7 @@ Hard constraints:
 - answer.citation MUST cite CIBSE Guide H, Guide B, Guide F, or a similar relevant CIBSE/BSRIA reference
 - source.curator MUST be "claude_generated"
 - source.review_status MUST be "draft"
-- source.reviewed_at MUST be "2026-06-18"
+- source.curated_at MUST be "2026-06-18"
 - metadata.difficulty MUST be "practitioner"
 - metadata.tags MUST include 3-5 relevant tags including "bms"
 - IDs MUST follow cb1-04-public-XXXX starting from {next_id:04d}
@@ -123,7 +123,7 @@ def load_schema_block() -> str:
   "question": {"text": "...scenario describing 24h+ BMS observation...", "options": ["Sensor failure (stuck or non-responsive reading)", "Calibration drift (sensor reads consistently offset)", "Setpoint change (operational, not a fault)", "Control loop instability (oscillation or hunting)", "Normal operation"]},
   "answer": {"choice": "A", "citation": "CIBSE Guide H — ..."},
   "grading": {"method": "exact_match", "case_sensitive": false},
-  "source": {"primary": "CIBSE Guide H", "curator": "claude_generated", "review_status": "draft", "reviewed_at": "2026-06-18"},
+  "source": {"primary": "CIBSE Guide H", "curator": "claude_generated", "review_status": "draft", "curated_at": "2026-06-18"},
   "metadata": {"difficulty": "practitioner", "tags": ["bms", "..."]}
 }"""
 
