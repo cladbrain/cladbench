@@ -7,15 +7,15 @@
 | 03 | IFC / BIM | 40 | mcq | objective | **40** | — | — | — | 0.93 | 0.88 | 0.88 | 0.80 | 0.80 | 0.70 | 0.72 |
 | 04 | BMS sensors | 48 | mcq | objective | **48** | — | — | — | 0.96 | 0.96 | 0.96 | 0.98 | 0.94 | 0.92 | 0.75 |
 | 05 | Retrofit ranking | 30 | ranking | 2 judges | **30** | — | — | — | 0.76 | 0.85 | 0.85 | 0.89 | 0.91 | 0.91 | 0.65 |
-| 06 | BREEAM | 54 | mcq with rationale | 2 judges | **52** | 2 | 15 | — | 0.89 | 0.87 | 0.83 | 0.81 | 0.81 | 0.83 | 0.77 |
+| 06 | BREEAM | 54 | mcq with rationale | 2 judges | **51** | 3 | 15 | — | 0.89 | 0.87 | 0.83 | 0.81 | 0.81 | 0.83 | 0.77 |
 | 07 | Thermal comfort | 40 | open answer | 2 judges | **40** | — | 4 | — | 0.94 | 0.93 | 0.83 | 0.94 | 0.63 | 0.67 | 0.55 |
 | 08 | CIBSE | 50 | mcq | objective | **21** | 29 | 3 | — | 0.90 | 0.94 | 0.92 | 0.82 | 0.84 | 0.68 | 0.68 |
 | 09 | Materials | 50 | mcq with rationale | 2 judges | **50** | — | — | — | 0.79 | 0.80 | 0.70 | 0.63 | 0.65 | 0.58 | 0.52 |
 | 10 | Energy bills | 30 | short answer | 2 judges | **30** | — | 3 | — | 0.96 | 0.92 | 0.76 | 0.85 | 0.40 | 0.46 | 0.37 |
 | 11 | Net zero | 40 | open answer | 2 judges | **40** | — | 21 | 30 | 0.97 | 0.91 | 0.74 | 0.96 | 0.27 | 0.28 | 0.23 |
 | 12 | Regulatory | 49 | short answer | 2 judges | **45** | 4 | 9 | 24 | 0.90 | 0.84 | 0.68 | 0.71 | 0.38 | 0.30 | 0.13 |
-| **All** | **12 categories** | **536** | 5 formats | — | **453** | **83** | **102** | **55** | **0.888** | **0.869** | **0.831** | **0.823** | **0.691** | **0.655** | **0.540** |
-|  | *verified only* | *453* |  |  |  |  |  |  | *0.897* | *0.879* | *0.829* | *0.817* | *0.662* | *0.639* | *0.536* |
+| **All** | **12 categories** | **536** | 5 formats | — | **452** | **84** | **102** | **55** | **0.888** | **0.869** | **0.831** | **0.823** | **0.691** | **0.655** | **0.540** |
+|  | *verified only* | *452* |  |  |  |  |  |  | *0.897* | *0.879* | *0.829* | *0.819* | *0.663* | *0.639* | *0.535* |
 
 **Marked by** — *objective*: deterministic scorer, no judge involved (exact match, or EPC band with ±1 tolerance). *2 judges*: mean of DeepSeek Chat and Grok 4, neither of which competes in this benchmark. Claude wrote all 536 questions and sits the exam, so it does not mark it.
 

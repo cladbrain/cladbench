@@ -14,7 +14,7 @@ CladBench v1 is an open benchmark of 536 questions across twelve categories of U
 
 **The informative variation is across categories, not across models.** Every model scores at least 0.75 on BMS sensor anomaly classification, while on regulatory cliff-edge questions the seven span 0.901 to 0.126 — a range wider than the 0.348 that separates the best model from the worst overall. Two of the four leading models are not statistically separated from each other.
 
-Scores across the full 536 questions range from 0.888 to 0.540. Reference answers are additionally reported by evidential status: 196 verified against the source document itself, 257 resting on agreement between three frontier models, and 83 flagged as unusable as ground truth with a stated reason. Fifty-five questions depend on regulatory positions that can change; these are tagged so the expiring part of the benchmark is identifiable, and we show the tag marks a maintenance property rather than a separate model capability. Coverage is primarily UK practice with selected EU regulatory content. The dataset, evaluation code, and all 3,752 per-question outputs are released.
+Scores across the full 536 questions range from 0.888 to 0.540. Reference answers are additionally reported by evidential status: 196 verified against the source document itself, 256 resting on agreement between three frontier models, and 84 flagged as unusable as ground truth with a stated reason. Fifty-five questions depend on regulatory positions that can change; these are tagged so the expiring part of the benchmark is identifiable, and we show the tag marks a maintenance property rather than a separate model capability. Coverage is primarily UK practice with selected EU regulatory content. The dataset, evaluation code, and all 3,752 per-question outputs are released.
 
 **Keywords:** evaluation benchmark, large language models, built environment, building regulations, energy performance, retrofit, BIM, IFC, BREEAM, CIBSE, net zero, MEES, embodied carbon
 
@@ -100,16 +100,18 @@ Reference answers carry one of three evidential statuses, and we report them sep
 | Status | n | Warrant |
 |---|---|---|
 | `primary_source_verified` | **196** | The figure was located in the source document itself, or the calculation re-derived |
-| `cross_validated` / `reviewed` | **257** | Three frontier models were asked whether the answer was right, and agreed |
-| `unverifiable` | **83** | Checked, and recorded as not usable as ground truth, with a stated reason |
+| `cross_validated` / `reviewed` | **256** | Three frontier models were asked whether the answer was right, and agreed |
+| `unverifiable` | **84** | Checked, and recorded as not usable as ground truth, with a stated reason |
 
 **Cross-validation is the weaker warrant and should be read as such.** On Category 1 it passed all 55 questions, of which 45 subsequently required correction when the Approved Documents were opened — most often citation drift, where a correct value was attributed to the wrong table. Model agreement measures consensus among instruments that share a failure mode; it is not the same as reading the document.
 
 Primary-source verification used the sources directly: Approved Document pages, the IFC4 EXPRESS schema, BREEAM SD5078, and for the embodied-carbon category, re-derivation of the stated arithmetic (99 equations recomputed, no errors found). Coverage is uneven by category and is limited by what a source can settle. The EXPRESS schema declares entity structure but carries no definitions, so it settles 14 of 40 Category 3 questions and cannot adjudicate the rest, where all four options name real entities and the question turns on meaning. Categories 5, 7, 10 and 11 pose scenario judgements with no single citable figure and remain cross-validated in full.
 
-The 83 unverifiable questions fall into four groups. **48 EPC bands** (Category 2) whose reference requires SAP modelling that has not been run. **29 CIBSE values** (Category 8), for which no lawful copy of the Guide was obtained and unauthorised copies circulating online were deliberately not used — these answers were generated from the model's own knowledge of CIBSE material and have not been checked against the source. **4 policy questions** (Category 12) turning on a position not yet decided.
+The 84 unverifiable questions fall into four groups. **48 EPC bands** (Category 2) whose reference requires SAP modelling that has not been run. **29 CIBSE values** (Category 8), for which no lawful copy of the Guide was obtained and unauthorised copies circulating online were deliberately not used — these answers were generated from the model's own knowledge of CIBSE material and have not been checked against the source. **4 policy questions** (Category 12) turning on a position not yet decided.
 
-And **2 BREEAM questions** (Category 6) whose reference answers the primary-source pass found to contradict SD5078: one conditions Pol 01 eligibility on a refrigerant GWP threshold of 2500 that the manual does not contain — Pol 01 awards credits on direct effect life cycle emissions or on GWP ≤ 10 — and one asserts that Ene 01 is assessed against Part L 2021, where the manual specifies Part L2A, 2013 edition with 2016 amendments. Neither is repairable by re-keying, because in the first case no option states the manual's position. They are retained in the scored set so that the released results remain complete and reproducible, flagged so they cannot be read as ground truth, and listed for rewrite in v2.
+And **3 BREEAM questions** (Category 6) whose reference answers contradict SD5078. One conditions Pol 01 eligibility on a refrigerant GWP threshold of 2500 that the manual does not contain — Pol 01 awards credits on direct effect life cycle emissions or on GWP ≤ 10. One asserts that Ene 01 is assessed against Part L 2021, where the manual specifies Part L2A, 2013 edition with 2016 amendments. The third is built on issue "Mat 04", which does not exist in SD5078 at all: the manual contains Mat 01, 02, 03, 05 and 06, and Mat 04 was a BREEAM 2014 issue removed in the 2018 scheme, where insulation is assessed under Mat 01 and Mat 03.
+
+None of the three is repairable by re-keying — in each case the premise is wrong rather than the keyed option. They are retained in the scored set so that the released results remain complete and reproducible, flagged so they cannot be read as ground truth, and listed for rewrite in v2.
 
 Section 5.4 reports scores by verification status.
 
@@ -200,7 +202,7 @@ Gemini 2.5 Pro and GPT-5 are not separated by this benchmark and should be descr
 
 † Provisional. Category 2 has 2 of 50 reference answers verified against a primary source and 48 recorded as unverifiable; Category 8 has 9 of 50 verified and 29 unverifiable (Section 4.1). These two category scores rest on the weakest evidence in the benchmark.
 
-‡ Category 6 is affected by an option-length cue: its correct option is the longest in 37 of 54 questions (69%), against a chance rate near 25% (Section 7). Part of the Category 6 column may reflect that cue rather than BREEAM knowledge, and the category should be read as provisional until distractor lengths are rebalanced in v2. Two of its 54 questions also carry reference answers that contradict SD5078 and are flagged unverifiable (Section 4.1).
+‡ Category 6 is affected by an option-length cue: its correct option is the longest in 37 of 54 questions (69%), against a chance rate near 25% (Section 7). Part of the Category 6 column may reflect that cue rather than BREEAM knowledge, and the category should be read as provisional until distractor lengths are rebalanced in v2. Three of its 54 questions also carry reference answers that contradict SD5078 and are flagged unverifiable (Section 4.1).
 
 For the four lower-scoring models, the spread across categories exceeds the 0.348 spread between models overall: 0.673 for GPT-4o, 0.649 for Qwen 2.5 7B, 0.634 for Llama 3.3 70B and 0.351 for GPT-5. GPT-4o scores 0.938 on BMS anomaly classification and 0.265 on net-zero pathway reasoning; Qwen 2.5 7B scores 0.775 on BREEAM and 0.126 on regulatory questions. The three strongest models are flatter, ranging 0.198 to 0.274 across categories.
 
@@ -208,15 +210,15 @@ Which category a task falls in therefore matters more than which model runs it, 
 
 ### 5.4 Performance by answer-key evidential status
 
-| Model | All (n=536) | Primary-source (n=196) | Cross-validated (n=257) | Unverifiable (n=83) |
+| Model | All (n=536) | Primary-source (n=196) | Cross-validated (n=256) | Unverifiable (n=84) |
 |---|---|---|---|---|
-| Claude Opus 4.7 | 0.888 | **0.863** | 0.924 | 0.839 |
-| Claude Opus 4.8 | 0.869 | **0.835** | 0.912 | 0.815 |
-| Gemini 2.5 Pro | 0.831 | **0.801** | 0.850 | 0.843 |
-| GPT-5 | 0.823 | **0.727** | 0.886 | 0.852 |
-| GPT-4o | 0.691 | **0.627** | 0.689 | 0.853 |
-| Llama 3.3 70B (FP8) | 0.655 | **0.565** | 0.696 | 0.741 |
-| Qwen 2.5 7B (FP8) | 0.540 | **0.490** | 0.572 | 0.558 |
+| Claude Opus 4.7 | 0.888 | **0.863** | 0.923 | 0.841 |
+| Claude Opus 4.8 | 0.869 | **0.835** | 0.912 | 0.817 |
+| Gemini 2.5 Pro | 0.831 | **0.801** | 0.850 | 0.845 |
+| GPT-5 | 0.823 | **0.727** | 0.889 | 0.844 |
+| GPT-4o | 0.691 | **0.627** | 0.691 | 0.844 |
+| Llama 3.3 70B (FP8) | 0.655 | **0.565** | 0.695 | 0.745 |
+| Qwen 2.5 7B (FP8) | 0.540 | **0.490** | 0.570 | 0.563 |
 
 **This table is a robustness diagnostic, not an alternative headline, and the reason is composition.** The 196 primary-source questions are not a scaled-down copy of the benchmark: 164 of them (84%) come from four categories, and Categories 4, 5 and 11 contribute none at all. What a source document can settle is not evenly distributed across the twelve categories — a threshold printed in an Approved Document can be located, a recommended retrofit ordering cannot. Reading the primary-source column as "the benchmark, done properly" would silently drop a quarter of the categories, including BMS anomaly classification, where every model scores near 0.95, and net-zero pathway reasoning, where the spread is widest. The 536-question figure remains the benchmark result.
 
@@ -236,7 +238,7 @@ Second, part of the primary-source drop survives a control for category. Restric
 
 The effect is real but not uniform: three models lose 0.08 or more, three are unchanged, and one is flat. We report it rather than interpret it; distinguishing an easier-question effect from a genuine answer-key effect would need a category-balanced verified subset, which is v2 work.
 
-The unverifiable column runs the other way for the weaker models: GPT-4o scores 0.853 there against 0.681 on primary-source questions in the controlled comparison. Forty-eight of those 83 are EPC band predictions graded by `band_tolerance`, which awards half marks for an adjacent band, so a model that is reliably one band out does well without ever being right.
+The unverifiable column runs the other way for the weaker models: GPT-4o scores 0.844 there against 0.681 on primary-source questions in the controlled comparison. Forty-eight of those 84 are EPC band predictions graded by `band_tolerance`, which awards half marks for an adjacent band, so a model that is reliably one band out does well without ever being right.
 
 ### 5.5 Settled and live regulatory positions
 
