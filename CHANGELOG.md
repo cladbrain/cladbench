@@ -7,6 +7,44 @@ versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 A change to a reference answer changes what the benchmark measures, so answer-key
 corrections are listed individually rather than summarised.
 
+## [1.0.5] — 2026-08-18
+
+Two corrections to what the repository *publishes*. Nothing about what the benchmark
+measures changes: no question text, reference answer, grading method or score is altered.
+
+### Fixed
+
+- **Two copies of the dataset disagreed with each other.** The repository carried a
+  `cladbench-hf/` folder holding the same 536 questions in Parquet. It was generated before
+  `cb1-06-public-0046` was reclassified in 1.0.4 and never regenerated, so the two copies
+  gave that question different evidence tiers. Nothing referenced the folder and the script
+  that generates it is not in this repository, so it could not be rebuilt here. It is
+  removed and ignored. The Parquet distribution is the Hugging Face dataset, generated from
+  `src/cladbench/data/`, which carries the correction.
+
+- **The paper cited a dataset hash that is no longer the released one.** Section 4.2 gave
+  `e4695eb32bcbab13`, correct at the time of the evaluation runs; the released dataset
+  hashes to `7f216b8a5838c189`. The difference is provenance metadata applied after the
+  runs. Section 4.2 now states both and what separates them, and
+  `scripts/verify_dataset_lineage.py` checks the claim: it re-scores every released response
+  against the released dataset and reports any row that does not reproduce. All 1,701
+  deterministic rows across the seven models reproduce exactly.
+
+## [1.0.4] — 2026-08-17
+
+Tagged at the time without an entry here; recorded retrospectively.
+
+### Fixed
+
+- **Answer key — `cb1-06-public-0046`** reclassified `cross_validated` → `unverifiable`.
+  The question is built on BREEAM issue "Mat 04", which does not exist in SD5078. Found by
+  a citation plausibility check over all 257 cross-validated answers; it was the only real
+  error among them. Evidence-tier counts become 196 / 256 / 84. Paper, LaTeX, PDF and the
+  Hugging Face card updated together.
+
+- Stray annotation fields removed from eleven released questions. None is read by the
+  grading code, so no score changes.
+
 ## [1.0.3] — 2026-08-15
 
 ### Fixed

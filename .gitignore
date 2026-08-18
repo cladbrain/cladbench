@@ -23,3 +23,17 @@ my_run.jsonl
 .idea/
 .DS_Store
 Thumbs.db
+
+# The Hugging Face build (Parquet). Removed from the repo on 2026-08-18.
+#
+# It was a second copy of the same 536 questions in a different format, and it drifted:
+# built before cb1-06-public-0046 was marked unverifiable, never rebuilt, so the repo
+# shipped two copies of that question disagreeing about its evidence tier. Nothing
+# referenced the folder, and the builder that produces it is not in this repo, so it could
+# not be regenerated here either.
+#
+# The Parquet distribution is the Hugging Face dataset itself
+# (huggingface.co/datasets/cladbrain/cladbench), which is generated from src/cladbench/data/
+# and is correct. One canonical copy in this repo, one published distribution — a format
+# conversion checked in beside its own source will drift again.
+cladbench-hf/

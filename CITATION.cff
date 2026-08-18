@@ -8,8 +8,8 @@ authors:
     email: cladbrain@gmail.com
     city: London
     country: GB
-version: "1.0.3"
-date-released: "2026-08-15"
+version: "1.0.5"
+date-released: "2026-08-18"
 license: Apache-2.0
 repository-code: "https://github.com/cladbrain/cladbench"
 # The concept DOI: always resolves to the most recent version.

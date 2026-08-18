@@ -145,6 +145,8 @@ Section 5.4 reports scores by verification status.
 
 Evaluation runs through the \texttt{cladbench} package (harness 2.0.0) against dataset hash \texttt{e4695eb32bcbab13}, with per-model output ceilings. A response terminated by a token limit is recorded as an error rather than scored as a wrong answer, and provider errors are classified terminal or transient rather than written as zeros. Every run emits a manifest recording dataset hash, harness version, model identifiers and token usage.
 
+The released dataset hashes to \texttt{7f216b8a5838c189}, not to the value above. The difference is provenance metadata applied after the runs --- a field rename, the removal of annotation fields not read by the grading code, and one answer reclassified from \texttt{cross\_validated} to \texttt{unverifiable}. No grading method changed and no correct answer moved. Re-scoring every released response against the released dataset reproduces all 1,701 deterministic rows exactly, across all seven models; \texttt{scripts/verify\_dataset\_lineage.py} performs that check and reports any row that does not.
+
 \textbf{Decoding is not uniform across providers, and cannot be made so.} Gemini 2.5 Pro, GPT-4o and the two Together AI endpoints accept \texttt{temperature=0.0} and were run greedily. GPT-5 rejects any temperature other than 1, and the Claude Opus 4.x family has deprecated the parameter and returns an error when it is set. Three of the seven evaluated models, and every judge verdict, are therefore sampled rather than greedy. Run-to-run variance is measured and reported in Section 4.4 rather than assumed away.
 
 \subsection{Judging}
