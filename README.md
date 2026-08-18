@@ -157,8 +157,10 @@ paper/                the paper as PDF, Markdown and LaTeX
 Selvan, R. T. (2026). *CladBench v1: A Twelve-Category Benchmark for Large Language Models
 on the UK and EU Built Environment.* https://doi.org/10.5281/zenodo.21951911
 
-That DOI always resolves to the latest version. To cite this specific release, use
-`10.5281/zenodo.21951912`. Machine-readable metadata is in `CITATION.cff`.
+That DOI always resolves to the latest version. To pin this release instead, use
+`10.5281/zenodo.21995290` for the code and data, or `10.5281/zenodo.21995337` for the
+compiled paper — Zenodo holds them as two records so the paper can be read without
+downloading the archive. Machine-readable metadata is in `CITATION.cff`.
 
 ## Licence and source material
 

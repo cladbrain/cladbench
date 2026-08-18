@@ -19,8 +19,14 @@ identifiers:
     value: "10.5281/zenodo.21951911"
     description: "Concept DOI — resolves to the latest version"
   - type: doi
+    value: "10.5281/zenodo.21995290"
+    description: "Version DOI — v1.0.5 (code and data)"
+  - type: doi
+    value: "10.5281/zenodo.21995337"
+    description: "Version DOI — v1.0.5-paper (the compiled paper)"
+  - type: doi
     value: "10.5281/zenodo.21951912"
-    description: "Version DOI — v1.0.1"
+    description: "Version DOI — v1.0.1 (superseded, retained so earlier citations resolve)"
 keywords:
   - evaluation benchmark
   - large language models
